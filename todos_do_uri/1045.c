@@ -2,7 +2,7 @@
 #include <math.h>
 
 int main () {
-  float A,B,C,lado_em_ordem1,lado_em_ordem2,lado_em_ordem3,result_ang,soma_dos_lados_menores;
+  float A,B,C,lado_em_ordem1,lado_em_ordem2,lado_em_ordem3,result_ang;
   scanf("%f %f %f",&A, &B, &C);
   if (A > B && A > C){
     if (B>C) {
@@ -34,20 +34,46 @@ int main () {
              lado_em_ordem2 = A;
              lado_em_ordem3 = B;
                 }
+if (A == B && A == C){
+  lado_em_ordem1 = A;
+  lado_em_ordem2 = A;
+  lado_em_ordem3 = A;
+}
+if (A == B && A != C){
+   if (A>C){
+     lado_em_ordem1 = A;
+     lado_em_ordem2 = A;
+     lado_em_ordem3 = C;
+   }else{
+     lado_em_ordem1 = C;
+     lado_em_ordem2 = A;
+     lado_em_ordem3 = A;
+   }
+}
+if (B == C && A != C){
+  if (A>C){
+    lado_em_ordem1 = A;
+    lado_em_ordem2 = C;
+    lado_em_ordem3 = C;
+  }else{
+    lado_em_ordem1 = C;
+    lado_em_ordem2 = C;
+    lado_em_ordem3 = A;
+  }
+}
  }
-soma_dos_lados_menores = lado_em_ordem2+lado_em_ordem3;
 
-if (lado_em_ordem1 >= soma_dos_lados_menores) {
+if (lado_em_ordem1 > lado_em_ordem2+lado_em_ordem3) {
   printf("NAO FORMA TRIANGULO\n");
   return 0;
 }
-result_ang = (pow (lado_em_ordem2,2)) + (pow (lado_em_ordem3,2));
+
 if (1>0){
-    if (result_ang == pow(lado_em_ordem1,2))
+    if ((pow (lado_em_ordem2,2)) + (pow (lado_em_ordem3,2)) == pow(lado_em_ordem1,2))
         printf("TRIANGULO RETANGULO\n");
-    if (result_ang < pow(lado_em_ordem1,2))
+    if ((pow (lado_em_ordem2,2)) + (pow (lado_em_ordem3,2)) > pow(lado_em_ordem1,2))
         printf("TRIANGULO OBTUSANGULO\n");
-    if (result_ang > pow(lado_em_ordem1,2))
+    if ((pow (lado_em_ordem2,2)) + (pow (lado_em_ordem3,2)) < pow(lado_em_ordem1,2))
         printf("TRIANGULO ACUTANGULO\n");
 }
  if (1>0) {
