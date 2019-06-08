@@ -1,0 +1,10 @@
+#include <stdio.h>
+#define PI 3.14159
+int main () {
+	float A,B,C;
+	scanf ("%f %f %f" ,&A,&B,&C);
+
+	printf ("TRIANGULO: %.3f\nCIRCULO: %.3f\nTRAPEZIO: %.3f\nQUADRADO: %.3f\nRETANGULO: %.3f\n" ,
+(A * C)/2,(C * C) * PI,((A + B)* C)/2,(B *B),(A * B));
+	return 0;
+}
