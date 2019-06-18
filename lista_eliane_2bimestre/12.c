@@ -12,6 +12,7 @@ int calculo_fibonacci (int v[],int n){
     v[i] = v[i-1] + v[i-2];
 }
 }
+
 void apresentar_vetor_fibonacci (int v[],int n) {
   for (int i = 0;i < n; i++){
     printf("%d ",v[i]);
@@ -20,7 +21,7 @@ void apresentar_vetor_fibonacci (int v[],int n) {
 }
 
 int main () {
-  int n,v[50];
+  int n,v[47];
   mudar_n (&n);
     while (n>0){
     calculo_fibonacci (v,n);
