@@ -21,7 +21,7 @@ int soma_dos_primos (int n){
   int soma,i,x;
   soma = 0;
   i = 1;
-  x = 1;
+  x = 1;\
   while (x<=n) {
     primos (i);
     if (primos (i) == 1){

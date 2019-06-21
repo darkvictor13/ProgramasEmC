@@ -4,24 +4,25 @@ void mudar_n (int *n){
     scanf("%d",n);
 }
 
-int calculo_fibonacci (int v[],int n){
+int calculo_fibonacci (long int v[],int n){
   int i;
   v[0] = 1;
   v[1] = 1;
   for (i = 2;i < n; i++){
     v[i] = v[i-1] + v[i-2];
-}
+  }
 }
 
-void apresentar_vetor_fibonacci (int v[],int n) {
+void apresentar_vetor_fibonacci (long int v[],int n) {
   for (int i = 0;i < n; i++){
-    printf("%d ",v[i]);
+    printf("%ld ",v[i]);
   }
   printf("\n");
 }
 
 int main () {
-  int n,v[47];
+  long int v[100];
+  int n;
   mudar_n (&n);
     while (n>0){
     calculo_fibonacci (v,n);

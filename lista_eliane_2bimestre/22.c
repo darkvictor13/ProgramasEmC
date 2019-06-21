@@ -38,7 +38,8 @@ int main () {
     if (eh_digito (ch)) {
       dig++;
     }
+    scanf("%c",&ch);
   }
-  printf("%d maiusculas\n%d minusculo\n%d digito", X,x,dig);
+  printf("%d maiusculas\n%d minusculo\n%d digito\n", X,x,dig);
   return 0;
 }
