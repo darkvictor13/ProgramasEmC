@@ -22,6 +22,6 @@ int main () {
       printf("\n");
     }
 scanf("%d %c",&n,&ch);
-}    
+}
 return 0;
 }
