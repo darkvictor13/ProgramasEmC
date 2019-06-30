@@ -8,16 +8,14 @@ void print_char (int i, char c) {
    while (j <= i) {
     printf("%c", c);
     j++;
-  }  */  //os 2 jeitos estao funcionais;
+  } os 2 jeitos estao funcionais; */ 
 }
 
 int main () {
   int n,i; char ch;
   scanf("%d %c",&n,&ch);
   while (n>0) {
-
-  for(i=1;n>0;)
-    for (; i <= n; i++) {
+    for (i=1 ; i <= n; i++) {
       print_char (i,ch);
       printf("\n");
     }
