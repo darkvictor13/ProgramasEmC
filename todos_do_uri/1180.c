@@ -8,23 +8,21 @@ void preencher_vetor (int v[],int x) {
   }
 }
 
-int qual_menor (int v[],int x,int *muda_o_val_da_posicao) {
-  int i = 0,menor = v[0];
+int qual_menor (int v[],int x) {
+  int i = 0,menor = v[0],posicao = 0;
   for (; i < x; i++) {
     if (v[i] < menor) {
       menor = v[i];
-      *muda_o_val_da_posicao = i;
+      posicao = i;
     }
-    printf("%d\n", *muda_o_val_da_posicao);
   }
-  return menor;
+  printf("Menor valor: %d\nPosicao: %d\n",menor , posicao);
 }
 
 int main () {
-  int v[100],tamanho_v,posicao,o_menor;
+  int v[1001],tamanho_v;
   scanf("%d", &tamanho_v);
   preencher_vetor (v,tamanho_v);
-  o_menor = qual_menor (v,tamanho_v,&posicao);
-  printf("Menor valor: %d\nPosicao: %d\n",o_menor , posicao);
+  qual_menor (v,tamanho_v);
   return 0;
 }
