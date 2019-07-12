@@ -10,6 +10,7 @@ void tabuleiro (char v[9]) {
 
 void inicializacao_jogo () {
   char v[9] = {'1','2','3','4','5','6','7','8','9'};
+  printf("    INSTRUCOES\n\n");
   printf("o jogo deve ser jogado assim, insira a casa na qual quer jogar\n\n");
   printf("as casas estao dispostas dessa maneira\n\n");
   tabuleiro (v);
@@ -23,7 +24,7 @@ void limpa_tabuleiro (char casas[]) {
   }
 }
 
-int jogar_denovo (int *a) {
+/*int jogar_denovo (int *a) {
   printf("vai querer jogar denovo? (1-sim 2-nao)\n");
   while (*a != 2 && *a != 1) {
     scanf("%d", a);
@@ -33,26 +34,30 @@ int jogar_denovo (int *a) {
     if (*a == 1) {
       return 1;
     }
+    printf("Ei leia os comandos direito te mandei escrever 1 ou 2 :(\n");
   }
-}
+}*/
 
 int marcar_no_tab (char casas[],int turno) {
-  int jogada;
+  int jogada,jogada_is_valid = 0;
   printf("Digite a casa para marcar [1 - 9]\n");
   scanf("%d", &jogada);
-  if (jogada < 1 || jogada > 9) {
-    jogada = 0;
-    printf("jogada invalida tente denovo\n\n");
-  }else if (casas [jogada - 1] != ' ') {
-    jogada = 0;
-    printf("jogada invalida tente denovo\n");
-  }else {
+  while (jogada_is_valid == 0) {
+    if (jogada < 1 || jogada > 9) {
+      printf("jogada invalida tente denovo\n");
+      scanf("%d", &jogada);
+    }else if (casas [jogada - 1] != ' ') {
+      printf("jogada invalida tente denovo\n");
+      scanf("%d", &jogada);
+    }else {
+      jogada_is_valid = 1;
+    }
+  }
     if (turno % 2 == 0) {
       casas[jogada - 1] = 'X';
     }else {
       casas[jogada - 1] = 'O';
       }
-    }
 }
 
 int vitoria_X (char casas[]) {
@@ -134,39 +139,16 @@ int main () {
 
         if (vitoria_X (casas) == 1) {
           printf("O jogador [X] venceu a partida. :D\n");
-          return 0;
+          break;
         }
         if (vitoria_O (casas) == 1) {
           printf("O jogador [O] venceu a partida. :D\n");
-          return 0;
+          break;
         }
+        if (count_jogadas == 9) {
+            printf("Vish deu velha (;-;)\n");
+          }
         count_jogadas ++;
       }
-    printf("Vish deu velha (;-;)\n");
-    a = 0;
-    aux = jogar_denovo (&a);
-    if (aux == 0) {
-      return 0;
-    }if (aux == 1) {
-      count_jogadas = 1;turno = 0;
-      while (count_jogadas <= 9) {
-          marcar_no_tab (casas,turno);
-          tabuleiro (casas);
-
-          turno ++;
-
-          if (vitoria_X (casas) == 1) {
-            printf("O jogador [X] venceu a partida. :D\n");
-            return 0;
-          }
-          if (vitoria_O (casas) == 1) {
-            printf("O jogador [O] venceu a partida. :D\n");
-            return 0;
-          }
-          count_jogadas ++;
-        }
-      printf("Vish deu velha (;-;)\n");
-    }
-
   return 0;
 }
