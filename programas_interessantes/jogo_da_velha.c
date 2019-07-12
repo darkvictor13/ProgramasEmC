@@ -63,58 +63,40 @@ int marcar_no_tab (char casas[],int turno) {
 int vitoria_X (char casas[]) {
   if (casas[0]== 'X' && casas[1]== 'X' && casas[2]== 'X') {
     return 1;
-  }
-  if (casas[3]== 'X' && casas[4]== 'X' && casas[5]== 'X') {
+  }if (casas[3]== 'X' && casas[4]== 'X' && casas[5]== 'X') {
     return 1;
-  }
-  if (casas[6]== 'X' && casas[7]== 'X' && casas[8]== 'X') {
+  }if (casas[6]== 'X' && casas[7]== 'X' && casas[8]== 'X') {
     return 1;
-  }
-  if (casas[0]== 'X' && casas[3]== 'X' && casas[6]== 'X') {
+  }if (casas[0]== 'X' && casas[3]== 'X' && casas[6]== 'X') {
     return 1;
-  }
-  if (casas[1]== 'X' && casas[4]== 'X' && casas[7]== 'X') {
+  }if (casas[1]== 'X' && casas[4]== 'X' && casas[7]== 'X') {
     return 1;
-  }
-  if (casas[2]== 'X' && casas[5]== 'X' && casas[8]== 'X') {
+  }if (casas[2]== 'X' && casas[5]== 'X' && casas[8]== 'X') {
     return 1;
-  }
-  if (casas[0]== 'X' && casas[4]== 'X' && casas[8]== 'X') {
+  }if (casas[0]== 'X' && casas[4]== 'X' && casas[8]== 'X') {
     return 1;
-  }
-  if (casas[2]== 'X' && casas[4]== 'X' && casas[6]== 'X') {
+  }if (casas[2]== 'X' && casas[4]== 'X' && casas[6]== 'X') {
     return 1;
-  }
-  return 0;
-}
+  }return 0;}
 
 int vitoria_O (char casas []) {
   if (casas[0]== 'O' && casas[1]== 'O' && casas[2]== 'O') {
     return 1;
-  }
-  if (casas[3]== 'O' && casas[4]== 'O' && casas[5]== 'O') {
+  }if (casas[3]== 'O' && casas[4]== 'O' && casas[5]== 'O') {
     return 1;
-  }
-  if (casas[6]== 'O' && casas[7]== 'O' && casas[8]== 'O') {
+  }if (casas[6]== 'O' && casas[7]== 'O' && casas[8]== 'O') {
     return 1;
-  }
-  if (casas[0]== 'O' && casas[3]== 'O' && casas[6]== 'O') {
+  }if (casas[0]== 'O' && casas[3]== 'O' && casas[6]== 'O') {
     return 1;
-  }
-  if (casas[1]== 'O' && casas[4]== 'O' && casas[7]== 'O') {
+  }if (casas[1]== 'O' && casas[4]== 'O' && casas[7]== 'O') {
     return 1;
-  }
-  if (casas[2]== 'O' && casas[5]== 'O' && casas[8]== 'O') {
+  }if (casas[2]== 'O' && casas[5]== 'O' && casas[8]== 'O') {
     return 1;
-  }
-  if (casas[0]== 'O' && casas[4]== 'O' && casas[8]== 'O') {
+  }if (casas[0]== 'O' && casas[4]== 'O' && casas[8]== 'O') {
     return 1;
-  }
-  if (casas[2]== 'O' && casas[4]== 'O' && casas[6]== 'O') {
+  }if (casas[2]== 'O' && casas[4]== 'O' && casas[6]== 'O') {
     return 1;
-  }
-  return 0;
-}
+  }return 0;}
 
 int main () {
   int a = 0,count_jogadas = 1,jogada,turno = 0,aux;
@@ -132,23 +114,21 @@ int main () {
     }
   }
     while (count_jogadas <= 9) {
-        marcar_no_tab (casas,turno);
-        tabuleiro (casas);
-
-        turno ++;
-
-        if (vitoria_X (casas) == 1) {
-          printf("O jogador [X] venceu a partida. :D\n");
-          break;
-        }
-        if (vitoria_O (casas) == 1) {
-          printf("O jogador [O] venceu a partida. :D\n");
-          break;
-        }
-        if (count_jogadas == 9) {
-            printf("Vish deu velha (;-;)\n");
-          }
-        count_jogadas ++;
+      marcar_no_tab (casas,turno);
+      tabuleiro (casas);
+      turno ++;
+      if (vitoria_X (casas) == 1) {
+        printf("O jogador [X] venceu a partida. :D\n");
+        break;
       }
+      if (vitoria_O (casas) == 1) {
+        printf("O jogador [O] venceu a partida. :D\n");
+        break;
+      }
+      if (count_jogadas == 9) {
+          printf("Vish deu velha (;-;)\n");
+        }
+      count_jogadas ++;
+    }
   return 0;
 }
