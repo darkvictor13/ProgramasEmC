@@ -118,11 +118,11 @@ int main () {
       tabuleiro (casas);
       turno ++;
       if (vitoria_X (casas) == 1) {
-        printf("O jogador [X] venceu a partida. :D\n");
+        printf("O jogador [ X ] venceu a partida. :D\n");
         break;
       }
       if (vitoria_O (casas) == 1) {
-        printf("O jogador [O] venceu a partida. :D\n");
+        printf("O jogador [ O ] venceu a partida. :D\n");
         break;
       }
       if (count_jogadas == 9) {

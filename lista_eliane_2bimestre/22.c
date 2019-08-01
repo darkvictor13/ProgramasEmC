@@ -40,6 +40,6 @@ int main () {
     }
     scanf("%c",&ch);
   }
-  printf("%d maiusculas\n%d minusculo\n%d digito\n", X,x,dig);
+  printf("%d maiuscula(s)\n%d minuscula(s)\n%d digito(s)\n", X,x,dig);
   return 0;
 }

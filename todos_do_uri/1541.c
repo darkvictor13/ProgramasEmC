@@ -23,8 +23,12 @@ int resposta (int c1,int c2,int perc) {
 
 int main () {
   int compr_casa,larg_casa,percentual,aux;
-  while (compr_casa != 0) {
-    scanf("%d %d %d",&compr_casa,&larg_casa,&percentual);
+  while (1) {
+    scanf("%d", &compr_casa);
+    if (compr_casa == 0) {
+      break;
+    }
+    scanf("%d %d",&larg_casa,&percentual);
     aux = resposta(compr_casa,larg_casa,percentual);
     printf("%d\n",aux);
   }
