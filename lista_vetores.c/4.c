@@ -9,7 +9,7 @@ void preenche_vet (int v[],int n) {
 
 int o_proximo_eh_maior (int v[],int n) {
   int count = 0;
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < n - 1; i++) {// o ultimo n tem proximo
     if (v[i] < v[i+1]) {
       count ++;
     }

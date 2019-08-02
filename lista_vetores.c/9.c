@@ -14,10 +14,16 @@ void troca (int *a,int *b) {
   *b = aux;
 }
 
-void inv_vet (int v[],int n) {
-  int i,j;
-  for (i = 0,j = n-1; i < j; i++,j--) {
-    troca (&v[i],&v[j]);
+void troca_2em2 (int v[],int n) {
+  int i;
+  if (n%2 == 0) {
+    for (i = 0; i < n; i+=2) {
+      troca (&v[i],&v[i+1]);
+    }
+  }else {
+    for (i = 0; i < n - 1; i+=2) {
+      troca (&v[i],&v[i+1]);
+    }
   }
 }
 
@@ -28,10 +34,10 @@ void print_vet (int v[],int n) {
 }
 
 int main () {
-  int v[10],tamanho;
-  scanf("%d", &tamanho);
-  preenche_vet (v,tamanho);
-  inv_vet (v,tamanho);
-  print_vet (v,tamanho);
+  int v[20],casos;
+  scanf("%d", &casos);
+  preenche_vet (v,casos);
+  troca_2em2 (v,casos);
+  print_vet (v,casos);
   return 0;
 }
