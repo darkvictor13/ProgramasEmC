@@ -46,7 +46,7 @@ void printa_vetor (int v[],int count) {
 int main () {
   int desejo_aluninhu[10001],v_resp[10001],quantos_alunos;
 
-  while (1) {
+  /*while (!feof) {*/while (1) {
     mudando_valores (&quantos_alunos);
     desejo_dos_alunos (desejo_aluninhu,quantos_alunos);
     if (quantos_alunos % 2 != 0) {

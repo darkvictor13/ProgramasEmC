@@ -8,10 +8,9 @@ void preenche_vet (int v[],int n) {
 }
 
 int maior_indice (int v[],int n) {
-  int i,aux = v[0],marcado = 0;
+  int i,marcado = 0;
   for (i = 1; i < n; i++) {
-    if (aux < v[i]) {
-      aux = v[i];
+    if (v[marcado] < v[i]) {
       marcado = i;
     }
   }

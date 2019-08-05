@@ -23,7 +23,7 @@ void print_vet (int v[],int n) {
 int main () {
   int tamanho;
   scanf("%d", &tamanho);
-  int v1[tamanho],v2[tamanho],v3[tamanho];
+  int v1[tamanho],v2[tamanho],v3[(tamanho*2)];//tamanho aceitou bug;
 
   preenche_vet(v1,v2,tamanho);
   preenche_vet_dobro (v3,v1,v2,tamanho);
