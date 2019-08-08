@@ -1,4 +1,5 @@
 #include <stdio.h>
+//nao esta fazendo a comparacao com a 1 casa
 
 void preenche_vet (int v[],int n) {
   int i;
@@ -36,9 +37,10 @@ int main () {
   int v[tamanho];
   preenche_vet (v,tamanho);
   for (i = 0; i < tamanho; i++) {
-    maior_i = maior_indice (v,tamanho,i+1);
+    maior_i = maior_indice (v,tamanho,i);
     troca (&v[maior_i],&v[i]);
   }
+  printf("--\n");
   print_vet (v,tamanho);
   return 0;
 }

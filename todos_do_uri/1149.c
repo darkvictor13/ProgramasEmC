@@ -9,7 +9,7 @@ void ate_ser_positivo (int *p) {
 int soma_Consecutivos (int n1,int n2) {
   int i,soma = 0;
   for (i = 0; i < n2; i++) {
-    soma += n1 + i;
+    soma = soma + n1 + i;
   }
   return soma ;
 }
