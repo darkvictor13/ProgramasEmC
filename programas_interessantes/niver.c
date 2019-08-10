@@ -8,15 +8,16 @@ void inicializacao () {
 }
 
 int inicia_ou_nao () {
-  int x = 3;
+  char x = '3';
 
-  while (x != 0 || x != 1) {
+  while (x != '0' || x != '1') {
     printf("Sua resposta -> ");
-    scanf("%d", &x);
+    scanf("%s", &x);
     printf("\n");
-    if (x == 0) {
+    if (x == '0') {
+      printf("nossa vc realmente nao quer ler o conteudo que triste\n");
       return 0;
-    }if (x == 1) {
+    }if (x == '1') {
       return 1;
     }
     printf("Opa galera parece que esse usuario nao sabe ler os comandos, tenta denovo ae\n");

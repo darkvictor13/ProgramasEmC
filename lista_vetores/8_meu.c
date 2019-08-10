@@ -16,8 +16,8 @@ void troca (int *a,int *b) {
 }
 
 int maior_indice (int v[],int n,int aux) {
-  int i,marcado = 0;
-  for (i = aux; i < n; i++) {
+  int i,marcado;
+  for (i = aux,marcado = aux; i < n; i++) {
     if (v[marcado] < v[i]) {
       marcado = i;
     }
