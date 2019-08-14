@@ -20,7 +20,7 @@ int retornaMenor(int a, int b){
 
 
 int main(){
-  int vet_inicial[100], vet_final[100], i, tam, n, parada = 0;
+  int vet_inicial[100], vet_final[100], i, j, tam, n, parada = 0, num;
   for(i = 0; i < 100; i++){
     vet_final[i] = -1;
     vet_inicial[i] = -1;
@@ -33,6 +33,12 @@ int main(){
     for(i = 0, parada = 0; i < 100; i++){
       if(vet_inicial[i] == -1){
         parada++;
+      }
+    }
+    for(i = 0, tam = 0; i < tam; i += 2){
+      if(tam % 2 == 0){
+        num = retornaMaior(vet_inicial[i], vet_inicial[i+1]);
+
       }
     }
   }

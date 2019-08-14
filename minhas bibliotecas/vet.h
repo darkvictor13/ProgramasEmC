@@ -76,6 +76,24 @@ void print_vet (int v[],int n) {
   }
 }
 
+int eh_palandrimo (int v[],int n) {
+  int i,j;
+  for (i = 0,j = n-1; i <= j; i++,j--) {
+    if (v[i] != v[j]) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+void limpa_vet (int v[],int n) {
+  int i;
+  for (i = 0; i < n; i++) {
+    v[i] = 0;
+  }
+}
+
+
 /*void print_vet_locais_de_memoria (int v[],int n) {
   for (int i = 0; i < n; i++) {
     printf("%d\n", &v[i]);
