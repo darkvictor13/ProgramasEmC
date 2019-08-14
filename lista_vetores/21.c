@@ -1,11 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
+#include "bibliotecas.h"
 
 void limpa_vet (int v[],int n) {
   int i;
@@ -34,7 +27,7 @@ void printa_resposta_bonito (int v[],int n) {
 }
 
 int main () {
-  int v[30],tamanho = 1;
+  int v[30],tamanho;
   limpa_vet (v,30);
   while (1) {
     scanf("%d", &tamanho);
