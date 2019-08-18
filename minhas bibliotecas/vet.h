@@ -1,4 +1,3 @@
-#include <stdio.h>
 //home/victor/github/ProgramasEmC1/minhas bibliotecas/vet.h
 void preenche_vet (int v[],int n) {
   int i;
@@ -26,13 +25,6 @@ void preenche_vet_completo (int v[],int *tamanho) {
   for (int i = 0; i < *tamanho; i++) {
     scanf("%d", &v[i]);
   }
-}
-
-void troca (int *a,int *b) {
-  int aux;
-  aux = *a;
-  *a = *b;
-  *b = aux;
 }
 
 int soma_vet (int v[],int n) {
@@ -93,15 +85,24 @@ void limpa_vet (int v[],int n) {
   }
 }
 
-
-/*void print_vet_locais_de_memoria (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", &v[i]);
-  }
-}*/
-
 void vem_1_para_frente (int v[],int n) {
   for (int i = 0; i < n; i++) {
     v[i] = v[i+1];
+  }
+}
+
+int soma_tudo_a_esquerda (int v[],int num_referencia) {
+  int soma = 0,i;
+  for (i = 0; i < num_referencia; i++) {
+    soma += v[i];
+  }
+  return soma;
+}
+
+
+int soma_tudo_a_direita (int v[],int num_referencia,int t) {
+  int soma = 0,i;
+  for (i = num_referencia + 1; i < t; i++) {
+    soma += v[i];
   }
 }

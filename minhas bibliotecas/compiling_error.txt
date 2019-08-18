@@ -1,0 +1,4 @@
+/home/victor/github/ProgramasEmC1/minhas bibliotecas/stringV.h: In function ‘conta_vogal’:
+/home/victor/github/ProgramasEmC1/minhas bibliotecas/stringV.h:73:8: error: unknown type name ‘size_t’
+   for (size_t i = 0; string[i]; i++) {
+        ^~~~~~
