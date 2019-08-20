@@ -1,10 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v1[],int v2[],int n) {
-  for (int i = 0; i < n; i++) {
-    scanf("%d %d", &v1[i],&v2[i]);
-  }
-}
+#include "bibliotecas.h"
 
 void transcreve_vet (int v1[],int v2[],int vresposta[],int n) {
   int i,j;
@@ -14,17 +8,11 @@ void transcreve_vet (int v1[],int v2[],int vresposta[],int n) {
   }
 }
 
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
-
 int main () {
   int tamanho;
   scanf("%d", &tamanho);
   int v1[tamanho],v2[tamanho],vresp[tamanho*2];
-  preenche_vet (v1,v2,tamanho);
+  preenche_2vet_ao_mesmo_tempo (v1,v2,tamanho);
   transcreve_vet (v1,v2,vresp,tamanho*2);
   print_vet (vresp,tamanho*2);
   return 0;

@@ -1,11 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
+#include "bibliotecas.h"
 
 int o_proximo_eh_maior (int v[],int n) {
   int count = 0;

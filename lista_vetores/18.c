@@ -1,17 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
-
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
+#include "bibliotecas.h"
 
 void preenche_vet_intercalando_os_2(int v3[],int v1[],int v2[],int tamanho_menor){
     int i,c;

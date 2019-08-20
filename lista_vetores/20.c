@@ -1,26 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
-
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
-
-int num_eh_primo (int n) {
-  for (int i = 2; i < n; i++) {
-    if (n % i == 0) {
-      return 0;
-    }
-  }
-  return 1;
-}
+#include "bibliotecas.h"
 
 void acha_o_tamanho_do_vet_primos (int v[],int tam_maior,int *tam_primos) {
   *tam_primos = 0;

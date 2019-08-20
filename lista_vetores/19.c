@@ -1,36 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
-
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
-
-int soma_dos_dig (int n) {
-//logica pegar cada termo de um num matando o num:
-//guarde o resto dele com 10 dps divida o num por 10
-  int aux = 0;
-  while (n > 0) {
-    aux += n % 10;
-    n /= 10;
-  }
-  return aux;
-}
-
-int soma_eh_par (int n) {
-  int aux = soma_dos_dig (n);
-  if (aux % 2 == 0) {
-    return 1;
-  }
-  return 0;
-}
+#include "bibliotecas.h"
 
 void preenche_vet_pares (int v_par[],int v_maior[],int tam_maior,int *tam_par) {
   int percorre_maior = 0; *tam_par = 0;// i do v_par

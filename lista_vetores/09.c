@@ -1,18 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
-
-void troca (int *a,int *b) {
-  int aux;
-  aux = *a;
-  *a = *b;
-  *b = aux;
-}
+#include "bibliotecas.h"
 
 void troca_2em2 (int v[],int n) {
   int i;
@@ -27,16 +13,9 @@ void troca_2em2 (int v[],int n) {
   }
 }
 
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
-
 int main () {
   int v[20],casos;
-  scanf("%d", &casos);
-  preenche_vet (v,casos);
+  preenche_vet_completo (v,&casos);
   troca_2em2 (v,casos);
   print_vet (v,casos);
   return 0;

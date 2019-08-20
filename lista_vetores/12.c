@@ -1,25 +1,4 @@
-#include <stdio.h>
-
-void preenche_vet (int v[],int n) {
-  int i;
-  for (i = 0; i < n; i++) {
-    scanf("%d", &v[i]);
-  }
-}
-
-int eh_par (int n) {
-  if (n%2 == 0) {
-    return 1;
-  }
-  return 0;
-}
-
-void print_vet (int v[],int n) {
-  for (int i = 0; i < n; i++) {
-    printf("%d\n", v[i]);
-  }
-}
-
+#include "bibliotecas.h"
 
 void salva_os_impares_em_um_novo_vet (int v1[],int v2[],int *n2,int n1) {
   *n2 = 0;
