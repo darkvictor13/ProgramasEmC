@@ -11,6 +11,26 @@ void preenche_string (int tam, char ch, char dest[]) {
   dest[tam] = 0;
 }
 
+void inverte_string (char destino[],char origem[],int tamanho) {
+  int i,j;
+  for (i = 0,j = tamanho - 1; j >= 0; i++,j--) {
+    destino[i] = origem[j];
+  }
+  destino[i] = '\0';
+}
+
+void gera_string (char dest[],char ch,int num) {
+  int i,j = 0,aux;
+  for (i = 0; i < num; i++) {
+    for (aux = 0; aux <= i; aux++,j++) {
+      dest [j] = ch;
+    }
+    dest[j] = ' ';
+    j++;
+  }
+  dest[j] = '\0';
+}
+
 void copystr (char destino[],char origem[]) {
   for (int i = 0; destino[i] = origem[i]; i++)
   ;
@@ -54,14 +74,14 @@ int eh_maiusculo (char ch) {
 }
 
 void transforma_um_char_em_maiusculo (char *c) {
-  if (eh_minusculo(c)) {
-    *c -= 32;
+  if (eh_minusculo(*c)) {
+    *c += ('A'-'a');
   }
 }
 
 void transforma_um_char_em_minusculo (char *c) {
-  if (eh_maiusculo(c)) {
-    *c += 32;
+  if (eh_maiusculo(*c)) {
+    *c += ('a'-'A');
   }
 }
 

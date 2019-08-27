@@ -1,7 +1,4 @@
 //home/victor/github/ProgramasEmC1/minhas bibliotecas/vet.h
-#ifnedf MYSTRING_H
-#define MYSTRING_H
-
 void preenche_vet (int v[],int n) {
   int i;
   for (i = 0; i < n; i++) {
@@ -78,6 +75,25 @@ int maior_indice_podendo_alterar_onde_inicia (int v[],int n,int aux) {
   return marcado;
 }
 
+void elimina_maior_menos_burro (int v[],int vx[],int n,int marcado) {
+  int i,j;
+  for (i = 0, j = 0; i < n; i++,j++) {
+    if (i == marcado) {
+      i++;
+    }
+    vx[j] = v[i];
+  }
+}
+
+void troca_2em2_otimizado (int v[],int n) {
+  int i;
+  for (i = 0; i < n-2; i+=2) {
+    troca (&v[i],&v[i+1]);
+  }if (n%2 == 0) {
+    troca (&v[i],&v[i+1]);
+  }
+}
+
 int eh_palandrimo (int v[],int n) {
   int i,j;
   for (i = 0,j = n-1; i <= j; i++,j--) {
@@ -98,6 +114,16 @@ void limpa_vet (int v[],int n) {
 void vem_1_para_frente (int v[],int n) {
   for (int i = 0; i < n; i++) {
     v[i] = v[i+1];
+  }
+}
+
+void salva_os_impares_em_um_novo_vet (int v1[],int v2[],int *n2,int n1) {
+  *n2 = 0;
+  for (int i = 0; i < n1; i++) {
+    if (eh_par(v1[i]) == 0) {
+      v2[*n2] = v1[i];
+      (*n2)++;
+    }
   }
 }
 
@@ -124,6 +150,7 @@ int num_nao_apareceu (int num,int tamanho,int v[]) {
       return 0;
     }
   }
+  return 1;
 }
 
 long long int soma_dos_produtos (int v1[],int v2[],int n) {
@@ -169,5 +196,3 @@ int subsequencia_eh_valida(int v1[],int v2[],int tam_menor,int inicio_subseq) {
   }
   return 1;
 }
-
-#endif
