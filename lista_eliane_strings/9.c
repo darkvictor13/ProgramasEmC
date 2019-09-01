@@ -1,18 +1,5 @@
 #include "bibliotecas.h"
 
-int conta_varios_char (char *parametro,char *str) {
-  int count = 0;char *aux = parametro;
-  for (; *str; str++) {
-    for (parametro = aux; *parametro; parametro++) {
-      if (*str == *parametro) {
-        count++;
-        break;
-      }
-    }
-  }
-  return count;
-}
-
 int main () {
   char string[101],referencia[101];
   int i,contador;

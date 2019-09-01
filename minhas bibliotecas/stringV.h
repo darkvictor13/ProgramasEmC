@@ -251,3 +251,16 @@ char * concatena_string (char *destino,char *origem) {
   copystr_o_mais_eficiente ((destino+lenght_v_sem_ser_indexada(destino)),origem);
   return destino;
 }
+
+int conta_varios_char (char *parametro,char *str) {
+  int count = 0;char *aux = parametro;
+  for (; *str; str++) {
+    for (parametro = aux; *parametro; parametro++) {
+      if (*str == *parametro) {
+        count++;
+        break;
+      }
+    }
+  }
+  return count;
+}
