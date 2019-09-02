@@ -12,6 +12,15 @@ int lenght_v_sem_ser_indexada (char *s) {
   return p-s;
 }
 
+int aparece_na_str (char *str,char x) {
+  for (; *str; str++) {
+    if (*str == x) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 void preenche_string (int tam, char ch, char dest[]) {
   for (int i = 0; i < tam; i++) {
     dest[i] = ch;
@@ -263,4 +272,50 @@ int conta_varios_char (char *parametro,char *str) {
     }
   }
   return count;
+}
+
+void se_aparece_na_string_exclua (char *parametro,char *destino,char *origem) {
+
+  for (; *origem; origem++) {
+    if (!aparece_na_str (parametro,*origem)) {
+      *destino = *origem;
+      destino++;
+    }
+  }
+  *destino = 0;
+}
+
+void elimina_repedidas_em_sequencia (char *destino,char *origem) {
+  for (; *origem; origem++) {
+    if (*origem != *(origem-1)) {
+      *destino = *origem;
+      destino++;
+    }
+  }
+  *destino = 0;
+}
+
+void inicia_com_maiuscula (char *destino,char *origem) {
+  *destino = toupper(*origem);
+    destino++; origem++;
+
+  for (; *origem; origem++,destino++) {
+    if (*(origem-1) == ' ') {
+      *destino = toupper(*origem);
+    }else {
+      *destino = *origem;
+    }
+  }
+  *destino = 0;
+}
+
+void str_troca_2em2 (char *destino,char *origem) {
+  for (; *origem && *(origem+1); origem+=2,destino+=2) {
+    *destino = *(origem+1);
+    *(destino+1) = *origem;
+  }
+  *destino = *origem;
+  if (*origem) {
+    *(destino+1) = *(origem+1);
+  }
 }

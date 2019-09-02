@@ -13,10 +13,11 @@
   return 0;
 }*/
 
-void prenche (int t,char ch,char str) {
+void prenche (int t,char ch,char *str) {
   for (; t > 0; t--,str++) {
     *str = ch;
   }
+  *str = 0;
 }
 
 int main () {
