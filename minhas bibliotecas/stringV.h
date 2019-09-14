@@ -98,9 +98,9 @@ char * copystr_voltando_o_local (char *destino,char *origem) {
 }
 
 char * copystr_o_mais_eficiente (char *destino,char *origem) {
-  char *p = destino;
-  while (*destino++ == *origem++)
-    ;
+  char *p = destino;//int i = 1;
+  while (*destino++ = *origem++)
+    //printf("cheguei %d\n", i++);;
   return p;
   }
 
@@ -317,5 +317,43 @@ void str_troca_2em2 (char *destino,char *origem) {
   *destino = *origem;
   if (*origem) {
     *(destino+1) = *(origem+1);
+  }
+}
+
+void adiciona_a_referencia (char *ref,char *dest,char *org) {
+  int c = 0;
+  char *aux = ref;
+
+  for(; *org; org++,dest++) {
+    if (*org == '>') {
+      for (; *ref; ref++,dest++) {
+        *dest = *ref;
+      }
+      ref = aux;
+      c++;
+    }
+    *dest = *org;
+  }
+  if (c == 0) {
+    for (; *ref; ref++,dest++) {
+      *dest = *ref;
+    }
+  }
+}
+
+void acha_a_1palavra (char *dest,char *org) {
+  for (; *org; org++) {
+    if (eh_letra (*(org))) {
+      break;
+    }
+  }
+
+  for (; *org; org++,dest++) {
+    if (eh_letra (*org)) {
+      *dest = *org;
+    }else {
+      *dest = '\0';
+      break;
+    }
   }
 }
