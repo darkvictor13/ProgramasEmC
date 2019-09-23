@@ -33,10 +33,7 @@ int soma_eh_par (int n) {
 }
 
 int eh_par (int n) {
-  if (n%2 == 0) {
-    return 1;
-  }
-  return 0;
+  return !(n%2);
 }
 
 void troca (int *a,int *b) {

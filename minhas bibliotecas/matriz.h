@@ -120,7 +120,7 @@ void preenche_matriz_triangular_superior (int m[][100],int num_de_l,int num_de_c
   }
 }
 
-void preenche_matriz_triangular_inferior (int m[][100],int num_de_l,int num_de_c) {
+void preenche_matriz_triangular_inferior (int *m[100],int num_de_l,int num_de_c) {
   int i,j;
   for (i = 0; i < num_de_l; i++) {
     for (j = 0; j < num_de_c; j++) {

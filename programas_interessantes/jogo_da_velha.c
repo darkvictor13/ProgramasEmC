@@ -26,7 +26,7 @@ void limpa_tabuleiro (char casas[]) {
 
 /*int jogar_denovo (int *a) {
   printf("vai querer jogar denovo? (1-sim 2-nao)\n");
-  while (*a != 2 && *a != 1) {
+  while (*a != 2 && *a != 1) {char v[9]
     scanf("%d", a);
     if (*a == 2) {
       return 0;
