@@ -2,9 +2,12 @@
 
 void exclui_str_referencia (char *dest,char *org,char *r) {
   int aux = lenght_v_sem_ser_indexada (r);
+  char * aux2 = strchr (org,r[0]);
 
   for (; *org; org++) {
-
+    *dest = *org;
+    strncmp (aux2,r,aux);
+    char * aux2 = strchr (org,r[0]);
   }
 }
 
