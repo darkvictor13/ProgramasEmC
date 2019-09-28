@@ -4,8 +4,8 @@ void preenche_matriz (double m[][12],int tam) {
   int i,j;
   for (i = 0; i < tam; i++) {
     for (j = 0; j < tam; j++) {
-      scanf("%lf", &m[i][j]);
-      //m[i][j] = 100;
+      //scanf("%lf", &m[i][j]);
+      m[i][j] = 100;
     }
   }
 }

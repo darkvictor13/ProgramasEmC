@@ -40,10 +40,8 @@ for (; i > 0; i--) {
 }*/
 
 
-void cria_cebola (int m[][100],int t) {
+void cria_cebola (int m[][1000],int t) {
   int i,j,indice = 1,aux = 0,pergunta;
-
-
 
   if (t%2) {
     pergunta = (t/2)+1;
@@ -70,7 +68,7 @@ void cria_cebola (int m[][100],int t) {
   }
 }
 
-void printa_bonitinhu (int m[][100],int t) {
+void printa_bonitinhu (int m[][1000],int t) {
   int i,j;
   if (t == 1) {
     printf("%3d\n",1);
@@ -88,7 +86,7 @@ void printa_bonitinhu (int m[][100],int t) {
 }
 
 int main () {
-  int matriz[100][100],tamanho;
+  int matriz[1000][1000],tamanho;
   scanf("%d", &tamanho);
   while (tamanho > 0) {
     cria_cebola (matriz,tamanho);
