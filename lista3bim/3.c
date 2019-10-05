@@ -10,6 +10,7 @@ void MaiuscMinusc (char *dest,char *org) {
   for (count = 0; *org; org++,dest++,count++) {
     if (*org == ' ') {
       *dest = ' ';
+      
       dest++;
       org++;
     }
