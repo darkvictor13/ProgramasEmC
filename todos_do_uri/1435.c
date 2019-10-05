@@ -1,45 +1,5 @@
 #include <stdio.h>
 
-/*void cria_matriz_quadrada (int m[][100],int t) {
-  int i,j,j_inv,aux;
-
-  for (i = 0; i < t; i++) {
-    for (j = 0; j < t; j++) {
-      m[i][j] = 1;
-    }
-  }
-
-  for (i = 1; i < t-1; i++) {
-    for (j = 0,j_inv = t-1,aux = 1; j <= j_inv; j++,j_inv--,aux++) {
-      m[i][j] = aux;
-      m[i][j_inv] = aux;
-    }
-  }
-
-  for (; i < t; i++) {
-    for (j = 0; j < t; j++) {
-      m[i][j] = 1;
-    }
-  }
-}*/
-
-
-/*for (; j < t; j++) {
-  m[i][j] = indice;
-}
-j--;
-for (; i < t; i++) {
-  m[i][j] = indice;
-}
-i--;
-for (; j > 0; j--) {
-  m[i][j] = indice;
-}
-for (; i > 0; i--) {
-  m[i][j] = indice;
-}*/
-
-
 void cria_cebola (int m[][1000],int t) {
   int i,j,indice = 1,aux = 0,pergunta;
 
@@ -70,17 +30,21 @@ void cria_cebola (int m[][1000],int t) {
 
 void printa_bonitinhu (int m[][1000],int t) {
   int i,j;
+
   if (t == 1) {
     printf("%3d\n",1);
     return ;
   }
 
   for (i = 0; i < t; i++) {
-    printf("%3d", m[i][j]);
     for (j = 1; j < t-1; j++) {
-      printf(" %3d", m[i][j]);
+      if (j == 0) {
+        printf("%3d", m[i][j]);
+      }else {
+        printf(" %3d", m[i][j]);
+      }
     }
-    printf(" %3d\n", m[i][j]);
+    printf("\n");
   }
   printf("\n");
 }
