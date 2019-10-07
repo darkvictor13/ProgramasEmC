@@ -31,13 +31,8 @@ void cria_cebola (int m[][1000],int t) {
 void printa_bonitinhu (int m[][1000],int t) {
   int i,j;
 
-  if (t == 1) {
-    printf("%3d\n",1);
-    return ;
-  }
-
   for (i = 0; i < t; i++) {
-    for (j = 1; j < t-1; j++) {
+    for (j = 0; j < t; j++) {
       if (j == 0) {
         printf("%3d", m[i][j]);
       }else {
