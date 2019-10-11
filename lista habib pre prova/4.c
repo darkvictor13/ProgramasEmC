@@ -1,28 +1,76 @@
-#define path "//home/victor_almeida/Desktop/ProgramasEmC-todos_meus_programas/minhas bibliotecas/bibliotecas.h"
+#include <stdio.h>
 
-#include path
+#define maxc 100
 
-int conta_linhas_nulas (int m[][100],int nl,int nc) {
-  int i,linhas;
+void preenche_matriz (int m[][maxc],int *nl,int *nc) {
+  int i,j;
 
-  for (i = linhas = 0; i < nl; i++)
-  {
-    if (vet_eh_nulo (m[i],nc)) {
-      linhas++;
-    } 
+  scanf ("%d %d",nl,nc);
+
+  for (i = 0; i < *nl; i++) {
+    for (j = 0; j < *nc; j++) {
+      scanf ("%d",&m[i][j]);
+    }
   }
-  return linhas;
+}
+
+/*int vet_eh_nulo (int v[],int t) {
+  int *p = (v+t);
+
+  for (;v < p; v++) {
+    if (*v) {
+      return 0;
+    }
+  }
+  return 1;
+}*/
+
+int contaL (int m[][maxc],int l,int c,int x) 
+{
+  int i,j,count;
+
+  for (i = count = 0; i < l; i++)
+  {
+    for (j = 0; j < c; j++)
+    {
+      if (m[i][j] != x)
+      {
+        break;
+      }
+    }
+    count += (j == c);
+  }
+  return count;
+}
+
+int contaC (int m[][maxc],int l,int c,int x) 
+{
+  int i,j,count;
+
+  for (j = count = 0; j < l; j++)
+  {
+    for (i = 0; i < l && m[i][j] == x; i++)
+    {
+      ;
+    }
+    count += (i == c);
+  }
+  return count;
+}
+
+int conta (int m[][maxc],int nl,int nc,int *lx,int *cx,int x) 
+{
+  *lx = contaL (m,nl,nc,x);
+  *cx = contaC (m,nl,nc,x);
 } 
 
 int main () {
-  int m[100][100],nl = 1,nc = 1,lnula;
+  int m[maxc][maxc],nl = 1,nc = 1,lx,cx;
 
-  while (nl > 0 && nc > 0)
-  {
+  while (nl > 0 && nc > 0) {
     preenche_matriz (m,&nl,&nc);
-    lnula = conta_linhas_nulas (m,nl,nc);
-    printf ("linhas nulas = %d",lnula);
+    conta (m,nl,nc,&lx,&cx,0);
+    printf ("num de linhas igual a [0] = %d\nnum de colunas igual a [0] = %d\n",lx,cx);
   }
-  
-  return 1;
+  return 0;
 }

@@ -33,7 +33,7 @@ void printa_bonitinhu (int m[][1000],int t) {
 
   for (i = 0; i < t; i++) {
     for (j = 0; j < t; j++) {
-      if (j == 0) {
+      if (!j) {
         printf("%3d", m[i][j]);
       }else {
         printf(" %3d", m[i][j]);
