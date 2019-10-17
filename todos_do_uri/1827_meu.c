@@ -58,13 +58,13 @@ int main ()
 {
   int matriz[maxt][maxt],tam;
 
-  while (scanf ("%d",&tam) != EOF)
+  while (scanf ("%d%*c",&tam) != EOF)
   {
     clear (matriz,tam);
     diagPrincipalESec (matriz,tam);
     Coloca1E4(matriz,tam);
     print(matriz,tam);
-    scanf ("%d",&tam);
+    scanf ("%d%*c",&tam);
   }
   return 0;
 }
