@@ -21,14 +21,14 @@ int eh_permutacao (int m[][maxc],int t) {
 
   for (i = 0; i < t; i++) {
     for (j = conta0 = conta1 = 0; j < t; j++) {
-      if (m[i][j]) {
+      if (m[i][j] == 1) {
         conta1++;
       }else if (!m[i][j]) {
         conta0++;
       }
     }
 
-    if (conta1 != 1 && conta0 != (t-1) ) {
+    if (conta1 != 1 || conta0 != (t-1) ) {
       return 0;
     }
     

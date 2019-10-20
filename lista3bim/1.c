@@ -22,12 +22,12 @@ int num_aparece_no_vet (int num,int *v,int t) {
 
 int vetores_sao_iguais (int *v1,int *v2,int t) {
   int i,x;
-   for (i = 0; i < t; i++,v1++) {
-     x = num_aparece_no_vet (*v1,v2,t);
-     if (!x){
-       return 0;
-     } 
-   }
+  for (i = 0; i < t; i++,v1++) {
+    x = num_aparece_no_vet (*v1,v2,t);
+    if (!x){
+      return 0;
+    } 
+  }
   return 1;
 }
 

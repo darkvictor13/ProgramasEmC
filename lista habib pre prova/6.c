@@ -2,45 +2,64 @@
 
 #define max 100
 
-void preenche_matriz (int m[][max],int *nl,int *nc) {
+void preencheMatriz (int m[][max],int *t) {
   int i,j;
 
-  scanf ("%d %d",nl,nc);
+  scanf ("%d",t);
 
-  for (i = 0; i < *nl; i++) {
-    for (j = 0; j < *nc; j++) {
+  for (i = 0; i < *t; i++) {
+    for (j = 0; j < *t; j++) {
       scanf ("%d",&m[i][j]);
     }
   }
 }
 
-int linha_esta_certa (int *v,vet_comp[t],int t)
-{
-  for (int i = 0; i < t; i++)
-  {
-    if (v[i] != vet_comp[i])
-    {
+int numApareceNoVetComparacao(int num,int v[],int t_v) {
+  int *p = (v + t_v);
+
+  for (; v < p; v++) {
+    if (*v == num) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int linhaEstaCerta (int *v,int vet_comp[],int t) {
+  int *ponteiro = (v + t);
+
+  for (; v < ponteiro; v++) {
+    if (!numApareceNoVetComparacao(*v,vet_comp,t)) {
       return 0;
     }
   }
 }
 
-int quadrado_latino (int m[][max],int nl,int nc) 
-{
-  int i,vet_comp [nl];
+int quadradoLatino (int m[][max],int t) {
+  int i,vet_comp [t];
 
-  for (i = 0; i < nl; i++)
-  {
+  for (i = 0; i < t; i++) {
     vet_comp[i] = i+1;
   }
   
-
-  for (i = 0; i < nl; i++)
-  {
-    if (!linha_esta_certa (m[i],vet_comp,nl))
-    {
+  for (i = 0; i < t; i++) {
+    if (!linhaEstaCerta (m[i],vet_comp,t)) {
       return 0;
     }
   }
   return 1;
 } 
+
+int main () {
+  int m[max][max],t = 1;
+
+  while (t) {
+    preencheMatriz(m,&t);
+    if (quadradoLatino(m,t)) {
+      printf("eh quadrado latino\n");
+    }else {
+      printf("nao eh quadrado latino\n");
+    }
+  }
+  return 0;
+}
