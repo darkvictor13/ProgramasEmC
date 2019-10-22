@@ -2,18 +2,16 @@
 
 #define maxtam 100
 
-void preencheVet(int v[],int *t) {
+void preencheVet(int *v,int *t) {
   int *final;
   scanf("%d",t);
-  //printf ("val de t = %d\n",*t);
 
   for (final = (v + *t); v < final; v++) {
     scanf("%d",v);
-    //printf("scaneei\n");
   }
 }
 
-void copiaVet(int dest[],int org[],int t) {
+void copiaVet(int *dest,int *org,int t) {
   int *p;
   for (p = (org + t); org < p; org++,dest++) {
     *dest = *org;
@@ -26,7 +24,7 @@ void troca(int *a,int *b) {
   *b = aux;
 }
 
-void achaOMenorEJogaNoFinal(int v[],int t) {
+void achaOMenorEJogaNoFinal(int *v,int t) {
   int *menor,*p;
 
   for (p = v,menor = v; p < (v + t); p++) {
@@ -38,7 +36,7 @@ void achaOMenorEJogaNoFinal(int v[],int t) {
   troca ((v + t - 1),(menor));
 }
 
-void ordenaVet(int dest[],int org[],int t) {
+void ordenaVet(int *dest,int *org,int t) {
   copiaVet(dest,org,t);
   //printf("copiei\n");
   for (; t > 1; t--) {
@@ -47,7 +45,7 @@ void ordenaVet(int dest[],int org[],int t) {
   }
 }
 
-void printaVet(int v[],int t) {
+void printaVet(int *v,int t) {
   int *p = (v + t);
 
   for (;v < p; v++) {

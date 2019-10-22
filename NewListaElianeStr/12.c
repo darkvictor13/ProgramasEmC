@@ -1,33 +1,36 @@
 #include <stdio.h>
 #include <string.h>
 
-void retiraParametro (char *dest,char *org,char *r) {
-  int tam_r = strlen(r),i,remover,eh_igual;
+void retiraParametro (char dest[],char org[],char r[]) {
+  int tam_r = strlen(r);
 
-  for (; *org; org++,dest++) {
-    for (i = eh_igual = 0; i < tam_r; i++) {
-      if (r[i] == *(org+i)) {
-        eh_igual++;
+  for (; *org; org++) {
+    if (*r == *org) {
+      if (!strncmp(org,r,tam_r)) {
+        org = (org + tam_r);
+        org--;
+      }else {
+        *dest = *org;
+        dest++;
       }
-    }
-    if (eh_igual != tam_r) {
-      *dest = *org;
     }else {
-      org += tam_r;
+      *dest = *org;
+      dest++;
     }
   }
-  *dest = '\0'; 
+  *dest = '\0';
 }
 
 int main () {
   char origem[51],parametro[10],destino[51];
 
-  //scanf("%[^\n]",parametro);
-  gets(parametro);
+  scanf("%[^\n]%*c",parametro);
+  scanf("%[^\n]%*c",origem);
 
-  while (strcmp(gets(origem),"fim")) {
+  while (strcmp(origem,"fim")) {
     retiraParametro(destino,origem,parametro);
-    printf("|%s|",destino);
+    printf("|%s|\n",destino);
+    scanf("%[^\n]%*c",origem);
   }
   return 0;
 }
