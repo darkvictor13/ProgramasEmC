@@ -27,11 +27,17 @@ float custoDeComprarComFornecedorX(float materia_prima[],int t,float custo_de_ca
 }
 
 void geraMatrizResposta(float mPxM[][100],int p,int m,float mFxC[][100],int f,float FxP[][100]) {
-  int i,j;
+  int i,j,maior;
+
+  if (p > m) {
+    maior = p;
+  }else {
+    maior = m;
+  }
 
   for (i = 0; i < f; i++) {
-    for (j = 0; j < p; j++) {
-      FxP[i][j] = custoDeComprarComFornecedorX(mPxM[i],m,mFxC[j]);
+    for (j = 0; j < maior; j++) {
+      FxP[i][j] = custoDeComprarComFornecedorX(mPxM[i],maior,mFxC[j]);
     }
   }
 } 
