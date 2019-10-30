@@ -17,6 +17,7 @@ int main () {
   for (scanf("%d",&casos); casos > 0; casos--) {
     scanf ("%d %c",&tam,&x);
     preencheStr(str,x,tam);
+    printf("[%s]\n");
   }
   return 0;
 }
