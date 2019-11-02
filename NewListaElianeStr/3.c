@@ -22,7 +22,7 @@ int main () {
   for (scanf("%d",&casos); casos > 0; casos--) {
     scanf("%d %c",&t,&c);
     fazPadrao(str,c,t);
-    printf("[%s]",str);
+    printf("[%s]\n",str);
   }
   return 0;
 }
