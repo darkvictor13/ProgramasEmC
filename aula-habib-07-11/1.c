@@ -133,7 +133,7 @@ void dados (FILE *arch,morador v[],int tam) {
 
   for (; v < fim; v++) {
     fprintf(arch,"|");
-    fprintf(arch,"%-5d",(v - inicio));
+    fprintf(arch,"%-5d",(v - inicio) + 1);
     fprintf(arch,"|");
     fprintf(arch,"%-49s",v->nome);
     fprintf(arch,"|");
