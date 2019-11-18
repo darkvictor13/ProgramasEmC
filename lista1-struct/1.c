@@ -26,9 +26,9 @@ typedef struct {
 void lerPesos (FILE *arch,s_vetor *p) {
   int count;
   char aux;
-  float *p_aux_float = p->vet + 1;
+  float *p_aux_float = p->vet;
 
-  fscanf(arch,"%f%c",&p->vet,&aux);
+  fscanf(arch,"%f%c",p_aux_float,&aux);
   
   for (count = 1; aux != '\n' && !feof(arch); p_aux_float++) {
     fscanf(arch,"%f%c",p_aux_float,&aux);
@@ -58,23 +58,16 @@ int load (char file_name[],pessoa v[],int *t) {
   return 1;
 }
 
-void calc (pessoa v[],int t) {
+/*void calc (pessoa v[],int t) {
   pessoa *fim = (v + t);
-
-  /*
-  int i;
-  for (i = 0; i < t; i++) {
-    v[i].dados.media = getMedia(v[i].vet)
-  }
-  */
 
   for (; v < fim; v++) {
     v->p_dados.valor_medio = getMedia(&(*v).p_vet);
-    v->p_dados.desvio_padrao = getDp();
+    v->p_dados.desvio_padrao = getDp(&(*v).p_vet,v->p_dados.valor_medio);
     v->p_dados.maior_valor = getMaior(&(*v).p_vet);
     v->p_dados.menor_valor = getMenor(&(*v).p_vet);
   }
-}
+}*/
 
 void printVet(s_vetor *p) {
   float *fim = (p->vet + p->tam);
