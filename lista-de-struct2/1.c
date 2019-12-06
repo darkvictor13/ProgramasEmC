@@ -33,7 +33,9 @@ void entradaDeDados(char nome_arq[],s_serie v[],int *n) {
     return 0;
   }
 
-  
+  for (; !feof(arch); v++) {
+    fscanf(arch, "%[^\n]%*c",v->nome);
+  }
 }
 
 

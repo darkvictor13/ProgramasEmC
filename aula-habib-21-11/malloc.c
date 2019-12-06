@@ -10,7 +10,7 @@ int load(char fn[], char *p[], int *n) {
     return 1;
   }
 
-  for (i = 0; !feof(p); p++,i++) {
+  for (i = 0; !feof(p); i++) {
     p[i] = malloc(100);
     fscanf(arch,"[^\n]%*r",p[i]);
     p[i] = realloc(p[i], 1 + strlen(p[i]));
@@ -23,9 +23,9 @@ int load(char fn[], char *p[], int *n) {
 
 void printaDados (char *p[], int tam) {
   char *fim = (p + tam);
-  printf("%s\n",*p);
+  puts(*p);
   for (; p < fim; p++) {
-    printf("%s\n",*p);
+    puts(*p);
   }
 }
 
