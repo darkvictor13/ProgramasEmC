@@ -28,9 +28,9 @@ int lerVet(FILE *a, float *v, int *t) {
   float *inicio = v;
   char ch;
 
-  fscanf(a, "%f%c",v,&ch);
-  for (v = (v + 1); ch != '\n' && ch != EOF; v++) {
-    fscanf(a, "%f%c",v,&ch);
+  fscanf(a, "%f%c",v++,&ch);
+  while (ch != '\n') {
+    fscanf(a, "%f%c",v++,&ch);
   }
   *t = v - inicio;
   return 1;
@@ -44,10 +44,10 @@ int load(char nome_arquivo[], pessoa **p, int *t) {
   *p = malloc(sizeof(pessoa) * MAX_PESSOAS);
   ponteiro_auxiliar = *p;
 
-  for (; 1; ponteiro_auxiliar++) {
+  for (; !feof(arch); ponteiro_auxiliar++) {
     guardaUmNome(arch,&ponteiro_auxiliar->nome);
     ponteiro_auxiliar->vet.v = malloc(TAM_VET * sizeof(float));
-    if (!lerVet(arch,ponteiro_auxiliar->vet.v,&ponteiro_auxiliar->vet.tam)) break;
+    lerVet(arch,ponteiro_auxiliar->vet.v,&ponteiro_auxiliar->vet.tam);
     ponteiro_auxiliar->vet.v = realloc(ponteiro_auxiliar->vet.v,ponteiro_auxiliar->vet.tam * sizeof(float));
   }
   *t = ponteiro_auxiliar - *p;
@@ -78,5 +78,6 @@ int main () {
   load("pesos.txt",&vetor,&num_de_pessoas);
   printName(vetor,num_de_pessoas);
   printVet(vetor->vet.v,vetor->vet.tam);
+  //free(vetor);
   return 0;
 }
